@@ -2,7 +2,7 @@
 select *from employees where salary > 50000 and department_id = 1;
 
 -- List customers from 'USA' OR 'Canada'.
-select *from customers where ( country like "USA" ) or ( country like "Canada" ) ;
+select *from customers where ( country = "USA" ) or ( country = "Canada" ) ;
 
 -- Show products with price < 20 OR stock_quantity > 150.
 select *from products where ( price < 20 ) or ( stock_quantity > 150 );
@@ -11,16 +11,16 @@ select *from products where ( price < 20 ) or ( stock_quantity > 150 );
 select *from employees where ( department_id <> 2 ) and ( department_id <> 3 ) ;
 
 -- List customers from 'Maharashtra' AND country = 'India'.
-select *from customers where state like "Maharashtra" and country like "India";
+select *from customers where state = "Maharashtra" and country = "India";
 
 -- Show orders with total_amount > 5000 AND status = 'Delivered'.
-select *from orders where total_amount > 5000 and status like 'delivered';
+select *from orders where total_amount > 5000 and status = 'delivered';
 
 -- Find products with price BETWEEN 5000 AND 15000.
 select *from products where price > 5000 and price < 15000;
 
 -- List employees with salary > 80000 OR job_title = 'Engineer'.
-select *from employees where salary > 80000 or job_title like "Engineer";
+select *from employees where salary > 80000 or job_title = "Engineer";
 
 -- Show customers NOT from 'USA', 'Canada', or 'Mexico'.
 select *from customers where country not in ("usa", "canada","mexico");
@@ -28,11 +28,12 @@ select *from customers where country not in ("usa", "canada","mexico");
 -- Find products with stock_quantity < 100 AND price > 50000.
 select *from products where stock_quantity < 100 and price > 50000;
 
--- List orders placed in 2023 AND total_amount > 200.
+-- List orders placed in 2023 AND total_amount > 500.
 select *from orders where order_date like "2023%" and total_amount > 500;
 
 -- Show employees hired BETWEEN '2020-01-01' AND '2022-12-31'.
-select *from employees where hire_date > "2020-01-01" and hire_date < "2022-12-31";
+-- select *from employees where hire_date > "2020-01-01" and hire_date < "2022-12-31";
+select *from employees where hire_date between '2020-01-01' and '2022-12-31';
 
 -- Find customers from 'Spain' OR 'France' states.
 select *from customers where country in ('France', 'Spain');
@@ -43,7 +44,7 @@ select *from products where price > 90000 or category_id in (1, 3, 5);
 -- Show employees with salary NOT BETWEEN 40000 AND 90000.
 select *from employees where salary not between 40000 and 90000;
 
--- Find orders with status NOT IN ('Cancelled', 'Refunded').
+-- Find orders with status NOT IN ('Delivered', 'Shipped').
 select *from orders where status not in ("Delivered", "Shipped");
 
 -- List customers with phone IS NOT NULL AND email IS NOT NULL.
@@ -89,7 +90,7 @@ select *from customers order by country , city ;
 select *from products order by category_id, price;
 
 -- Find the 3 most recently hired employees.
-select *from employees order by hire_date desc;
+select *from employees order by hire_date desc limit 3;
 
 -- Display bottom 5 products by price.
 select *from products order by price limit 5;
