@@ -10,42 +10,38 @@ This is a **work-in-progress** open-source SQL practice project.
 - **Learning resource:** A place to experiment, learn, and share SQL knowledge.
 
 ## Set Up the Database
-- Open your MySQL client (such as MySQL Workbench, DBeaver, or the MySQL command line).
-- Run the commands in `000.sql` to create the `sql_practice` database, tables, and populate them with sample data.
+- Open your preferred MySQL client (e.g., MySQL Workbench, DBeaver, or MySQL command line).
+- Execute the SQL scripts in `000.sql` to create the `sql_practice` database, define all the tables, and populate them with sample data.
 
-## Database Schema
+## Database Schema & ER Diagram
 
-The database models an e-commerce system with the following tables:
-
-1. **departments** - Company departments with locations and budgets
-2. **suppliers** - Product suppliers with contact information
-3. **categories** - Product categories with descriptions
-4. **customers** - Customer information including contact details and location
-5. **employees** - Employee information with job titles, salaries, and department relationships
-6. **products** - Product catalog with pricing, inventory, and category information
-7. **orders** - Customer orders with status and shipping information
-8. **order_details** - Line items for each order with quantity and pricing
-
-## Entity Relationship Diagram (Draft)
-
-```
-+-------------+     +------------+     +------------+
-| departments |     | suppliers  |     | categories |
-+-------------+     +------------+     +------------+
-       ↑                  ↑                  ↑
-       |                  |                  |
-+-------------+     +------------+     +------------+
-| employees   |     | products   |<----| order_det. |
-+-------------+     +------------+     +------------+
-                           ↑                  ↑
-                           |                  |
-                    +------------+     +------------+
-                    | customers  |---->| orders    |
-                    +------------+     +------------+
-```
+The detailed database schema and entity-relationship diagram are now available in [`DATABASE_SCHEMA.md`](DATABASE_SCHEMA.md).  
+Please refer to that file for a full description of tables, columns, relationships, and the ER diagram.
 
 ---
 
-***Contributions, suggestions, and feedback are welcome—feel free to open an issue or submit a pull request!***
+## 🤝 Contributing, Collaboration & Feedback
+
+Your ideas and participation are welcome!
+
+- **🐛 Report Issues:**  
+  Found a bug or have a suggestion? [Open an issue](../../issues) and let's discuss it.
+
+- **🔧 Submit Pull Requests:**  
+  Have improvements, new queries, or documentation fixes? Fork the repo and submit a PR.
+
+- **❓ Ask Questions:**  
+  Stuck on a query or want to learn about a specific SQL topic? Start a [discussion](../../discussions)—your question might help others too!
+
+- **💡 Share Ideas:**  
+  Have ideas for new practice scenarios, additional tables, or database features? We'd love to hear them!
+
+> 📋 For technical contribution guidelines and advanced schema ideas, see [`DATABASE_SCHEMA.md`](DATABASE_SCHEMA.md).
+
+---
+
+**⭐ Star this repo if you find it helpful!**
+
+***Thank you for your interest and support! Every bit of feedback and contribution helps this project grow.***
 
 ---
