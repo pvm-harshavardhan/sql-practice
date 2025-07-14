@@ -1,23 +1,5 @@
 USE sql_practice;
 
--- Create an AFTER INSERT trigger on orders to log activity.
--- Create a BEFORE UPDATE trigger to prevent salary decrease.
--- Create a BEFORE DELETE trigger to backup data to archive table.
--- Create a trigger to auto-update stock after order is placed.
--- View existing triggers on a table.
--- Drop a trigger.
--- Create a trigger to calculate total_amount before insert.
--- Test trigger on bulk insert.
--- Add validation logic in a trigger.
--- Prevent deletion of VIP customers using a trigger.
--- Auto-set updated_at timestamp on update.
--- Prevent INSERT if order_date is in the future.
--- Update audit table with trigger on employee changes.
--- Cascade update using a trigger (if foreign keys not used).
--- Check for recursion in triggers.
--- Create a trigger to sync data between two tables.
--- Create a conditional trigger that only runs on specific conditions.
-
 -- create an after insert trigger on orders to log activity
 delimiter //
 create trigger trg_log_order_insert
